@@ -1,0 +1,15 @@
+{
+	"address": {
+		"id": 1,
+		"zip": "91301",
+		"country": "United States",
+		"country_abbreviation": "US",
+		"places": [{
+			"city": "Beverly Hills",
+			"longitude": "-118.4065",
+			"state": "California",
+			"state_abbreviation": "CA",
+			"latitude": "34.0901"
+		}]
+	}
+}

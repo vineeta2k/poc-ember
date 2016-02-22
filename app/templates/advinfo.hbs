@@ -1,36 +1,4 @@
 <section class="form addressform cf">
-<form name="login" action="advinfo" method="get" accept-charset="utf-8">
-    <ul>
-        <li>
-		
-			<label for="country_code">Country Code</label>
-			
-			
-			
-			{{input type="text" value=country_code placeholder="US"  name="country_code" list="country"}}
-			 
-			<datalist id="country">
-			{{#each countries as |country|}}
-			
-			   <option value={{country.abbreviation}}>{{country.name}}</option>
-			  
-			 {{/each}}
-			</datalist>
-		
-		</li>
-		
-        <li>
-			<label for="zipcode">Zip Code</label>           
-			{{input type="text" value=zipcode name="zipcode" placeholder="91301"  }}
-		</li>
-        {{#if showPlace}}
-			<li><label for="state">State</label>
-			<input type="state" name="state" ></li>
-			<li><label for="city">City</label>
-			<input type="city" name="city" ></li>
-			<li>
-			<input type="submit" value="Save"></li>
-		{{/if}}
-    </ul>
-</form>
+  {{#zipcode-lookup countries=countries}}
+  {{/zipcode-lookup}}
 </section>

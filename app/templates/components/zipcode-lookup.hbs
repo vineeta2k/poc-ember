@@ -1,0 +1,29 @@
+<form name="lookup" action="save" method="get" accept-charset="utf-8">
+  <ul>
+    <li>
+      <label for="country_code">Country Code</label>
+      {{input type="text" value=country_code placeholder="US"  name="country_code" list="country"  }}
+      <datalist id="country">
+        {{#each countries as |country|}}
+          <option value={{country.abbreviation}}>{{country.name}}</option>
+        {{/each}}
+      </datalist>
+    </li>
+
+    <li>
+      <label for="zipcode">Zip Code</label>
+      {{input type="text" value=zipcode name="zipcode" placeholder="91301"  }}
+      &nbsp;
+      <button {{action "countryAndZipCodeAdded" click}} >Lookup</button>
+    </li>
+    {{#if showPlace}}
+      <li><label for="state">State</label>
+        {{input type="text" value=state name="state"  }}
+      </li>
+      <li><label for="city">City</label>
+        {{input type="text" value=city name="city"  }}
+      </li>
+
+    {{/if}}
+  </ul>
+</form>

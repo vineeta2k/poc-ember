@@ -74,20 +74,17 @@ var countries = [
 
  ];
 
- 
+
 export default Ember.Route.extend({
   model() {
 	  return Ember.RSVP.hash({
       countries: countries,
-	 
+
     });
   },
   setupController(controller, model) {
     this._super(...arguments);
     Ember.set(controller, 'countries', model.countries);
-    Ember.set(controller, 'address', model.address);
 
   }
 });
-
-
